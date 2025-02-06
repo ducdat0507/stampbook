@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    image-rendering: pixelated;
+
+    --airmail-stripe: 
+        linear-gradient(45deg, #fff 12.5%, #a33 12.5% 25%, #fff 25% 37.5%, #44a 37.5% 50%, #fff 50% 62.5%, #a33 62.5% 75%, #fff 75% 87.5%, #44a 87.5%)
+        top left / 50px 50px repeat;
+}
+
+body {
+    margin: 0;
+    font-size: 14px;
+    min-height: 100vh;
+    background: 
+        linear-gradient(45deg, #fff 12.5%, #ffc0c0 12.5% 25%, #fff 25% 37.5%, #7dbdfd 37.5% 50%, #fff 50% 62.5%, #ffc0c0 62.5% 75%, #fff 75% 87.5%, #7dbdfd 87.5%)
+        top left / 250px 250px repeat fixed;
+    --book-scale: 1;
+}
+
+#container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden auto;
+}
+
+main {
+    --width: min(398px, calc(100% - 84px));
+    width: var(--width);
+    box-sizing: content-box;
+    min-height: calc(100% - 32px);
+    height: fit-content;
+    padding: 16px 22px;
+    background: white;
+    box-shadow: 0 0 8px #0007;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1;
+    transition: margin-inline-end .5s cubic-bezier(0.075, 0.82, 0.165, 1),
+        filter .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+h2 {
+    font-size: 16px;
+}
+
+button:not(.faux-link, .stamp-slot), .button {
+    display: inline-block;
+    border: 1px solid #1a1a43;
+    background: linear-gradient(#7979ff, #4a4aed) border-box;
+    color: white;
+    box-shadow: 0 1px 2px #0007;
+    text-shadow: 0 1px 2px #0007;
+    text-decoration: none;
+    padding: .4ch .8ch;
+    border-radius: 3px;
+    font: inherit;
+    cursor: pointer;
+    margin: 1px;
+}
+
+button:not(.faux-link, .stamp-slot):hover, .button:hover {
+    background: linear-gradient(#a4a4ff, #7171fa) border-box;
+    box-shadow: 0 1px 3px #0007;
+}
+
+button:not(.faux-link, .stamp-slot):active, .button:active {
+    background: linear-gradient(#7979ff, #4a4aed) border-box;
+    box-shadow: 0 1px 1px #0007;
+}
+
+button:not(.faux-link, .stamp-slot).dangerous, .button.dangerous {
+    background: linear-gradient(#ff5959, #ed2a2a) border-box;
+}
+button:not(.faux-link, .stamp-slot).dangerous:hover, .button.dangerous:hover {
+    background: linear-gradient(#ff9393, #fc6c6c) border-box;
+}
+button:not(.faux-link, .stamp-slot).dangerous:active, .button.dangerous:active {
+    background: linear-gradient(#ff5959, #ed2a2a) border-box;
+}
+
+textarea {
+    resize: none;
+    height: 6em;
+}
+
+a:not(.button, .stamp), .faux-link {
+    display: inline;
+    background: transparent;
+    border: none;
+    color: #4a4aed;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    user-select: inherit;
+    -webkit-user-select: inherit;
+}
+
+.flexible-space {
+    flex: 1;
+}
+
+#book-header {
+    background: linear-gradient(#fff, #fff) center / calc(100% - 12px) 100% no-repeat, var(--airmail-stripe);
+    margin: -16px -30px 16px -30px;
+    padding: 16px 30px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px #0007;
+}
+
+#book-header h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#book-name-input {
+    font: inherit;
+    border: none;
+    padding: none;
+    width: 100%;
+    transition: box-shadow .3s;
+}
+
+#book-name-input:focus-visible {
+    outline: none;
+    box-shadow: 0 2px #7dbdfd;
+}
+
+
+
+#first-time-popup {
+    background: #f9ffd1;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px dashed #3a4306;
+}
+
+#first-time-popup :is(h2, p) {
+    margin: 0;
+}
+
+.inline-logo {
+    vertical-align: -10px;
+}
+
+
+.stamp-slot {
+    outline: calc(1px * var(--book-scale)) dashed #409bf5;
+    border: calc(2px * var(--book-scale)) solid transparent;
+    box-shadow: inset 0 1px 4px #0002;
+    color: white;
+    text-shadow: 0 2px 8px #000, 0 0 1px #000;
+    background: #0002;
+    background-clip: content-box;
+    font: inherit;
+    font-weight: bold;
+    font-size: calc(1em * var(--book-scale));
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background 1s;
+}
+
+.stamp-slot:hover {
+    background: #409bf577;
+    background-clip: content-box;
+}
+
+.stamp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, calc(96px * var(--book-scale)));
+    gap: calc(4px * var(--book-scale));
+}
+
+.stamp-grid > * {
+    width: calc(96px * var(--book-scale));
+    height: calc(39px * var(--book-scale));
+}
+
+.stamp-grid > .stamp-slot {
+    width: calc(88px * var(--book-scale));
+    height: calc(31px * var(--book-scale));
+    padding: 0;
+    margin: calc(4px * var(--book-scale));
+}
+
+
+.stamp {
+    display: block;
+    border-image: url('../res/stamp-border.png') 6 / calc(6px * var(--book-scale)) round;
+    filter: drop-shadow(0 0 4px #0003) drop-shadow(0 0 1px #000);
+    background-color: white;
+    background-clip: content-box;
+    transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1), z-index .3s;
+    transition-delay: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(4px * var(--book-scale));
+    cursor: pointer;
+}
+
+.stamp:hover {
+    transition-delay: 0.5s;
+    transform: scale(2);
+    z-index: 100;
+}
+
+.stamp img {
+    max-width: calc(calc(100% + 4px) / var(--book-scale));
+    max-height: calc(calc(100% + 4px) / var(--book-scale));
+    transform: scale(var(--book-scale));
+}
+
+.add-animation {
+    animation: add-animation 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    z-index: 1;
+}
+
+@keyframes add-animation {
+    from {
+        transform: scale(1.3);
+        filter: drop-shadow(0 0 8px #0003) drop-shadow(0 0 1px #000);
+    }
+    to {
+        transform: none;
+        filter: drop-shadow(0 0 4px #0003) drop-shadow(0 0 1px #000);
+    }
+}
+
+.shake-animation {
+    animation: shake-animation 0.1s infinite alternate;
+}
+
+@keyframes shake-animation {
+    0% {
+        transform: translate(0, 1px);
+    }
+    16% {
+        transform: translate(1px, -1px);
+    }
+    33% {
+        transform: translate(-1px, -1px);
+    }
+    50% {
+        transform: translate(1px, 1px);
+    }
+    66% {
+        transform: translate(0, -1px);
+    }
+    83% {
+        transform: translate(-1px, 1px);
+    }
+    100% {
+        transform: translate(0, 1px);
+    }
+}

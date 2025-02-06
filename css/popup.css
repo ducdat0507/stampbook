@@ -1,0 +1,92 @@
+.popup-container {
+    position: fixed;
+    inset: 0;
+    background: #0003;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000;
+}
+
+.popup {
+    background: linear-gradient(#fff, #fff) center / calc(100% - 12px) calc(100% - 12px) no-repeat, var(--airmail-stripe);
+    box-shadow: 0 4px 8px #0007;
+    padding: 6px;
+    width: min(442px, calc(100% - 20px));
+    max-height: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-header {
+    padding: 14px;
+    margin: 0;
+    border-bottom: 1px solid #777;
+}
+
+.popup-content {
+    padding: 14px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.popup-content article {
+    margin-block: -1em;
+}
+
+
+.popup-actions {
+    padding: 14px;
+    border-top: 1px solid #777;
+    display: flex;
+    justify-content: end;
+    gap: 2px;
+}
+.popup-actions > * {
+    margin: 0;
+}
+
+.popup-show-animation {
+    animation: popup-animation 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.popup-show-animation .popup {
+    animation: popup-animation-popup 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.popup-hide-animation {
+    animation: popup-animation 0.5s reverse cubic-bezier(0.86, 0, 0.07, 1);
+}
+.popup-hide-animation .popup {
+    animation: popup-animation-popup 0.5s reverse cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@keyframes popup-animation {
+    from {
+        background: #0000;
+    } to {
+        background: #0003;
+    }
+}
+
+@keyframes popup-animation-popup {
+    from {
+        transform: translateY(100vh);
+    } to {
+        transform: none;
+    }
+}
+
+
+.popup h5 {
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+}
+.popup input:not([type="checkbox"], [type="radio"]),
+.popup textarea {
+    width: 100%;
+    font: inherit;
+    padding: .4ch .8ch;
+    line-height: inherit;
+}

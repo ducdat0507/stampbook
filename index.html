@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the stampbook</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tooltip.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/tabs.css">
+
+    <script src="js/helper.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/book.js"></script>
+    <script src="js/tabs.js"></script>
+    <script src="js/tabs/prefs.js"></script>
+    <script src="js/tooltip.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="tab-holder"></div>
+        <aside id="menu-content"></aside>
+        <main>
+            <header id="book-header">
+                <h1>
+                    <input id="book-name-input" value="My stamp book">
+                </h1>
+            </header>
+            <div id="book-content">
+    
+            </div>
+            <div id="first-time-popup">
+                <h2>
+                    Welcome 
+                    to <img src="res/logo.png" alt="stampbook" class="inline-logo">!
+                </h2>
+                <p>
+                    This is a website that allows you to easily make your own stamp collection!
+                </p>
+                <p>
+                    Just drag an image or a 1990s style link-me-button and drop it to the slot above to make a stamp!
+                </p>
+                <p>
+                    <small style="font-size:12px">
+                        Legal notice: By making your first stamp you agree to
+                        <button class="faux-link" onclick="showCookieDisclaimer()">this cookie disclaimer.</button>
+                    </small>
+                </p>
+            </div>
+        </main>
+        <div id="tooltip"></div>
+    </div>
+</body>
+</html>

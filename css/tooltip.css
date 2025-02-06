@@ -1,0 +1,64 @@
+#tooltip {
+    position: fixed;
+    background: #f9ffd1;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #aaad992f;
+    box-shadow: 0 2px 4px #0007;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: fit-content;
+    max-width: 480px;
+    z-index: 2147483647;
+
+    transition: opacity .2s;
+    opacity: 0;
+}
+
+#tooltip.active {
+    opacity: 1;
+}
+
+#tooltip :is(h2, h3, h4, p) {
+    margin: 0;
+    font-size: 1em;
+}
+
+#tooltip hr {
+    border: none;
+    border-bottom: 1px dashed #3a4306;
+    width: 100%;
+    margin: 0;
+}
+
+#tooltip blockquote {
+    position: relative;
+    padding: 10px;
+    margin: 0;
+}
+
+#tooltip blockquote::before {
+    position: absolute;
+    content: '“';
+    font-size: 60px;
+    top: -5px;
+    left: 0px;
+    opacity: 0.2;
+}
+#tooltip blockquote::after {
+    position: absolute;
+    content: '„';
+    font-size: 60px;
+    bottom: 5px;
+    right: 0px;
+    opacity: 0.2;
+}
+
+
+#tooltip small {
+    font-style: italic;
+    font-size: 12px;
+}
