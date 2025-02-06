@@ -28,6 +28,7 @@ function initTabs() {
         if (window.innerWidth <= 960) closeMenu();
         setBookMode("glue"); 
     })
+    /*
     elms.modes.layout = makeTabButton("res/icons/layout-mode.png", (elm) => {
         elm.innerHTML = `
             <h3>Layout mode</h3>
@@ -41,6 +42,7 @@ function initTabs() {
         if (window.innerWidth <= 960) closeMenu();
         setBookMode("layout"); 
     })
+        */
 
     elms.tabHolder.insertAdjacentHTML("beforeend", `<div class="flexible-space"></div>`);
 
