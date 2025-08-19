@@ -16,9 +16,7 @@ tabs.prefs = (elm) => {
             <div class="storage-info">Estimating...</div>
             <div class="storage-bar"></div>
             <small>
-                Note: The storage limit is enforced by your browser and may increase or decrease
-                depending on your usage of this site and your device's physical storage capacity. It is also possible that
-                your browser only allows storing less data than the reported limit.
+                Note: The displayed storage limit is estimated and may not reflect the real storage limit enforced by your browser.
                 <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria#how_much_data_can_be_stored">Learn more</a>
             </small>
             <hr style="margin-block:10px">
