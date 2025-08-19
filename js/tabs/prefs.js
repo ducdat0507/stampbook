@@ -79,7 +79,7 @@ tabs.prefs = (elm) => {
                 Link to this site:<br>
                 <small>(stampbook-compatible buttons&mdash;drag stamps to your favorite editor to get HTML code)</small>
                 <div class="about-stamps" style="margin-block:10px">
-                    <a class="stamp" href="https://ducdat0507.github.io/stampbook/"><img alt="stampbook button" src="res/share/88x31.png"></a>
+                    <a class="stamp" href="https://duducat.moe/stampbook/"><img alt="stampbook button" src="https://duducat.moe/stampbook/res/share/88x31.png"></a>
                 </div>
             </div>
         </details>
